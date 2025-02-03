@@ -1,0 +1,29 @@
+// ==UserScript==
+// @name         Bloxd.io Auto Clicker (Cheat)
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Automatically clicks in Bloxd.io
+// @author       bloxd-io-hack on github
+// @match        https://bloxd.io/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Automatically clicks on an element with a specific class every 1 second
+    function autoClick() {
+        // Look for a button or item to click (e.g., "action-button" or "craft-button")
+        let actionButton = document.querySelector('.action-button, .craft-button, .upgrade-button'); // Common action selectors
+        
+        if (actionButton) {
+            actionButton.click();  // Click the button
+            console.log('Button clicked!');
+        } else {
+            console.log('Action button not found.');
+        }
+    }
+
+    // Set an interval to perform the action repeatedly (every 1 second)
+    setInterval(autoClick, 1000);  // 1000ms = 1 second
+})();
